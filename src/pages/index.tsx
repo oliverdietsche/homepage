@@ -1,5 +1,5 @@
-import { ExamplePage } from '../ui';
+import { Fragment } from 'react';
 
-export default function HomePage() {
-	return <ExamplePage />;
+export default function IndexPage() {
+	return <Fragment />;
 }

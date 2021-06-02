@@ -1,2 +1,3 @@
-export * from './FullWidth';
+export * from './fadeAnimations';
 export * from './Layout';
+export * from './text';

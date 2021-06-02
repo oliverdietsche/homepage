@@ -1,0 +1,7 @@
+import { Fragment } from 'react';
+
+export interface I$(name)Props {}
+
+export function $(name)({}: I$(name)Props) {
+	return <Fragment />;
+}

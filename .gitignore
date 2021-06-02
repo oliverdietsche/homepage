@@ -38,4 +38,4 @@ docs
 # allow
 !.gitkeep
 
-# build
+svg/**

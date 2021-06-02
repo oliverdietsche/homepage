@@ -1,0 +1,19 @@
+import { createContext, ReactNode, useContext } from 'react';
+
+export interface I$(name)Context {
+	value: string;
+}
+
+const $(name)Context = createContext<I$(name)Context>({
+	value: '',
+});
+
+export interface I$(name)ProviderProps {
+	children: ReactNode;
+}
+
+export function $(name)Provider({ children }: I$(name)ProviderProps) {
+	return <$(name)Context.Provider value={{ value: '' }}>{children}</$(name)Context.Provider>;
+}
+
+export const use$(name) = () => useContext($(name)Context);

@@ -1,0 +1,46 @@
+[
+	{
+		"directory": "src/ui/components",
+		"folder": true,
+		"includeSubdirs": false,
+		"entryFile": "index.ts",
+		"files": [
+			{
+				"filename": "index.ts",
+				"pathToTemplate": "autofiles/component/index.txt"
+			},
+			{
+				"filename": "$(name).tsx",
+				"pathToTemplate": "autofiles/component/main.txt"
+			},
+			{
+				"filename": "$(name).stories.tsx",
+				"pathToTemplate": "autofiles/component/stories.txt"
+			}
+		]
+	},
+	{
+		"directory": "src/providers",
+		"folder": false,
+		"includeSubdirs": false,
+		"entryFile": "index.ts",
+		"files": [
+			{
+				"filename": "$(name)Provider.tsx",
+				"pathToTemplate": "autofiles/provider/main.txt"
+			}
+		]
+	},
+	{
+		"directory": "src/pages",
+		"folder": false,
+		"includeSubdirs": true,
+		"entryFile": "",
+		"files": [
+			{
+				"filename": "$(name).tsx",
+				"pathToTemplate": "autofiles/page/main.txt"
+			}
+		]
+	}
+]

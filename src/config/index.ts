@@ -1,1 +1,1 @@
-export * from './LayoutConfig';
+export * from './pages';

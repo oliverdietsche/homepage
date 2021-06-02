@@ -20,11 +20,11 @@ export const decorators = [withThemeProvider, withLayout];
 export const parameters = {
 	viewport: {
 		viewports: INITIAL_VIEWPORTS,
-		defaultViewport: 'iphonex',
+		default: 'iphonex'
 	},
 	options: {
 		storySort: {
-			order: ['Pages', 'Components'],
+			order: ['Components'],
 		},
 	},
 	actions: { argTypesRegex: '^on[A-Z].*' },

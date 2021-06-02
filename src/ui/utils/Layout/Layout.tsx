@@ -1,19 +1,17 @@
-import { Container } from '@material-ui/core';
 import { Fragment } from 'react';
-import { LayoutConfig } from '../../../config';
+import { Footer } from './Footer';
+import { Header } from './Header';
 
 export interface ILayoutProps {
 	children: JSX.Element;
-	headerComponent?: JSX.Element;
 }
 
-export function Layout({ children, headerComponent }: ILayoutProps) {
+export function Layout({ children }: ILayoutProps) {
 	return (
 		<Fragment>
-			{headerComponent && <header>{headerComponent}</header>}
-			<Container component="main" maxWidth={LayoutConfig.maxWidth}>
-				{children}
-			</Container>
+			<Header />
+			<main>{children}</main>
+			<Footer />
 		</Fragment>
 	);
 }
