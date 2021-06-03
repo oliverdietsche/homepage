@@ -1,7 +1,7 @@
 {
-  "name": "workshops-ipa",
+  "name": "homepage",
   "version": "1.0.0",
-  "description": "react webapp to schedule and participate in workshops",
+  "description": "portfolio like homepage with option to add pages like a blog",
   "author": "Oliver Dietsche",
   "scripts": {
     "dev": "next dev",
