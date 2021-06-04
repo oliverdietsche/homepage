@@ -20,7 +20,7 @@ export const decorators = [withThemeProvider, withLayout];
 export const parameters = {
 	viewport: {
 		viewports: INITIAL_VIEWPORTS,
-		default: 'iphonex'
+		default: 'iphonex',
 	},
 	options: {
 		storySort: {

@@ -9,7 +9,7 @@ export interface IIconProps {
 }
 
 export function Icon({ icon, size = 24, fill, hoverFill, ...props }: IIconProps) {
-	const { title, d, color } = ICONS[icon];
+	const { title, color, d, viewBox } = ICONS[icon];
 	return (
 		<svg
 			css={css`
@@ -27,7 +27,7 @@ export function Icon({ icon, size = 24, fill, hoverFill, ...props }: IIconProps)
 					: ''}
 			`}
 			role="img"
-			viewBox="0 0 24 24"
+			viewBox={viewBox}
 			xmlns="http://www.w3.org/2000/svg"
 			{...props}
 		>

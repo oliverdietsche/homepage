@@ -15,4 +15,7 @@ type TIcon =
 	| 'nextjs'
 	| 'storybook'
 	| 'swift'
-	| 'quotes';
+	| 'quotes'
+	| 'letter'
+	| 'trophy'
+	| 'plane';

@@ -2,6 +2,8 @@ export * from './Card';
 export * from './Icon';
 export * from './IconBadge';
 export * from './IconButton';
+export * from './IconFact';
+export * from './IconLink';
 export * from './Navigation';
 export * from './Quote';
 export * from './Section';

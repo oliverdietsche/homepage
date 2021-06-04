@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { IconBadge } from './IconBadge';
 
 export default {
@@ -7,15 +6,9 @@ export default {
 };
 
 export const Default = () => (
-  <div
-    css={css`
-      display: inline-block;
-    `}
-  >
-    <IconBadge
-      icon="typescript"
-      title="TypeScript"
-      contentColor="#FFFFFF"
-    />
-  </div>
+  <IconBadge
+    icon="typescript"
+    title="TypeScript"
+    contentColor="#FFFFFF"
+  />
 );

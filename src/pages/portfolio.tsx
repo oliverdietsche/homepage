@@ -3,13 +3,14 @@ import { useRouter } from 'next/dist/client/router';
 import { Fragment } from 'react';
 import { PAGES_CONFIG } from '../config';
 import { useTheme } from '../theme';
-import { Card, Navigation, Stage, TextBlock } from '../ui';
+import { Card, IconLink, Navigation, Stage, TextBlock } from '../ui';
 import { IconBadge } from '../ui/components/IconBadge';
+import { IconFact } from '../ui/components/IconFact';
 import { Quote } from '../ui/components/Quote';
 import { Section } from '../ui/components/Section';
 
 export default function PortfolioPage() {
-	const { primaryPalette, secondaryPalette, mediaQueries } = useTheme();
+	const { universalColors, primaryPalette, secondaryPalette, mediaQueries } = useTheme();
 	const router = useRouter();
 	const { navItems } = PAGES_CONFIG;
 
@@ -44,8 +45,17 @@ export default function PortfolioPage() {
 					palette={primaryPalette}
 					title="– Contact"
 					heading="How to get in touch with me."
-					text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+					text="Feel free to send an email to the following address. I’ll respond to you as soon as possible."
 				/>
+				<div>
+					<IconLink
+						icon="letter"
+						text="oliver@dietsche.email"
+						iconColor={universalColors.primary}
+						textColor={secondaryPalette.text.primary}
+						href="mailto:oliver@dietsche.email"
+					/>
+				</div>
 			</Section>
 			<Section palette={primaryPalette}>
 				<div
@@ -144,8 +154,21 @@ export default function PortfolioPage() {
 					palette={primaryPalette}
 					title="– Achievements"
 					heading="Achievements I’ve reached so far."
-					text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 				/>
+				<div>
+					<IconFact
+						icon="plane"
+						text="3 weeks internship at Ocere in Cheltenham"
+						iconColor={universalColors.primary}
+						textColor={secondaryPalette.text.primary}
+					/>
+					<IconFact
+						icon="trophy"
+						text="6th at the swiss Web Technologies championships"
+						iconColor={universalColors.primary}
+						textColor={secondaryPalette.text.primary}
+					/>
+				</div>
 			</Section>
 			<Section palette={secondaryPalette}>
 				<TextBlock palette={secondaryPalette} title="– Testimonials" heading="What others say about my work." />

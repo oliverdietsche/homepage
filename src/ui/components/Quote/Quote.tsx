@@ -39,7 +39,7 @@ export function Quote({ author, quote, palette, backgroundPalette }: IQuoteProps
 					}
 				`}
 				dangerouslySetInnerHTML={{ __html: replaceNewlinesWithBreakTags(quote) }}
-			 />
+			/>
 			<Icon
 				icon="quotes"
 				css={css`

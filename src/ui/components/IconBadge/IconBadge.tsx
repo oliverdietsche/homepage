@@ -13,11 +13,11 @@ export function IconBadge({ icon, title, contentColor }: IIconBadgeProps) {
 	return (
 		<div
 			css={css`
-				margin: 8px;
-				padding: 10px;
-				display: grid;
+				display: inline-grid;
 				grid-auto-flow: column;
-				grid-gap: 10px;
+				grid-gap: 8px;
+				margin: 8px;
+				padding: 8px;
 				background: ${color};
 			`}
 		>
