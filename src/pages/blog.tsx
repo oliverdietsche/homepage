@@ -6,7 +6,7 @@ import { Navigation, Stage, TextBlock } from '../ui';
 import { Section } from '../ui/components/Section';
 
 export default function BlogPage() {
-	const { primaryPalette, secondaryPalette, mediaQueries } = useTheme();
+	const { secondaryPalette, mediaQueries } = useTheme();
 	const router = useRouter();
 	const { navItems } = PAGES_CONFIG;
 
