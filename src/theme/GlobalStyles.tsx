@@ -16,6 +16,10 @@ export function GlobalStyles() {
 					font-family: 'Poppins', sans-serif;
 					font-size: 16px;
 				}
+
+				a:focus {
+					outline: none;
+				}
 			`}
 		/>
 	);

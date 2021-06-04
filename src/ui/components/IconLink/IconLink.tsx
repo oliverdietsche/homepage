@@ -69,10 +69,6 @@ export function IconLink({ icon, text, iconColor, textColor, href }: IIconLinkPr
 								transition-delay: 0.05s;
 								width: 100%;
 							}
-
-							:focus {
-								outline: none;
-							}
 						}
 					`}
 				/>

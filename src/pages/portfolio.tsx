@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import { Fragment } from 'react';
 import { PAGES_CONFIG } from '../config';
 import { useTheme } from '../theme';
@@ -16,6 +17,17 @@ export default function PortfolioPage() {
 
 	return (
 		<Fragment>
+			<Head>
+				<title>Oliver Dietsche | Portfolio</title>
+				<meta
+					name="description"
+					content="The digital portfolio of Oliver Dietsche, a passionate software developer. Find out more about him, his work and how to get in contact on this page."
+				/>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				{/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+				{/* @ts-ignore: charset in lowercase */}
+				<meta charset="UTF-8" />
+			</Head>
 			<Section palette={primaryPalette}>
 				<Navigation
 					css={css`
@@ -67,13 +79,13 @@ export default function PortfolioPage() {
 					`}
 				>
 					<IconBadge title="TypeScript" icon="typescript" contentColor="#FFFFFF" />
-					<IconBadge title="React" icon="react" contentColor="#FFFFFF" />
+					<IconBadge title="React" icon="react" contentColor="#202020" />
 					<IconBadge title="HTML" icon="html" contentColor="#FFFFFF" />
 					<IconBadge title="CSS" icon="css" contentColor="#FFFFFF" />
 					<IconBadge title="Java" icon="java" contentColor="#FFFFFF" />
 					<IconBadge title="SQL" icon="mysql" contentColor="#FFFFFF" />
 					<IconBadge title="PHP" icon="php" contentColor="#FFFFFF" />
-					<IconBadge title="Firebase" icon="firebase" contentColor="#FFFFFF" />
+					<IconBadge title="Firebase" icon="firebase" contentColor="#202020" />
 				</div>
 				<TextBlock
 					css={css`
