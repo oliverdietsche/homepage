@@ -32,7 +32,6 @@ export function Navigation({ items, currentHref, palette, ...props }: INavigatio
 						<Link passHref href={href}>
 							<a
 								css={css`
-									text-decoration: none;
 									line-height: 1em;
 									font-size: 1.5rem;
 									color: ${activeItem ? palette.text.primary : palette.text.secondary};

@@ -17,6 +17,10 @@ export function GlobalStyles() {
 					font-size: 16px;
 				}
 
+				a {
+					text-decoration: none;
+				}
+
 				a:focus {
 					outline: none;
 				}

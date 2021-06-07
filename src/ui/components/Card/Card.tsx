@@ -4,19 +4,27 @@ import { Icon } from '../Icon';
 export interface ICardProps {
 	title: string;
 	description: string;
+	githubHref: string;
 	palette: IThemePalette;
 	icons?: TIcon[];
-	githubHref?: string;
 }
 
-export function Card({ title, description, palette, icons, githubHref, ...props }: ICardProps) {
+export function Card({ title, description, githubHref, palette, icons, ...props }: ICardProps) {
 	return (
-		<div
+		<a
+			href={githubHref}
 			css={css`
+				display: block;
 				box-sizing: border-box;
 				height: fit-content;
 				padding: 24px;
 				background: ${palette.background};
+
+				transition: 0.3s;
+				transition-property: transform;
+				:hover {
+					transform: scale(1.1);
+				}
 			`}
 			{...props}
 		>
@@ -28,17 +36,14 @@ export function Card({ title, description, palette, icons, githubHref, ...props 
 					font-size: 1.2rem;
 				`}
 			>
-				{githubHref ? (
-					<a
-						href={githubHref}
-						css={css`
-							margin-right: 10px;
-							vertical-align: sub;
-						`}
-					>
-						<Icon icon="github" />
-					</a>
-				) : null}
+				<span
+					css={css`
+						margin-right: 10px;
+						vertical-align: sub;
+					`}
+				>
+					<Icon icon="github" />
+				</span>
 				{title}
 			</h3>
 			<p
@@ -63,6 +68,6 @@ export function Card({ title, description, palette, icons, githubHref, ...props 
 					<Icon key={`${title}Card-${index}`} icon={icon} />
 				))}
 			</div>
-		</div>
+		</a>
 	);
 }

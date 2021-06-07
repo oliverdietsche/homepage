@@ -19,7 +19,6 @@ export function IconFact({ icon, text, iconColor, textColor, ...props }: IIconFa
 				grid-auto-flow: column;
 				grid-gap: 16px;
 				margin: 8px;
-				text-decoration: none;
 				font-size: 1.2rem;
 
 				${mediaQueries.tabletUp} {

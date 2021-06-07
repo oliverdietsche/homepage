@@ -11,11 +11,7 @@ export function IconLink({ icon, text, iconColor, textColor, href }: IIconLinkPr
 	const { mediaQueries } = useTheme();
 	return (
 		<Link passHref href={href}>
-			<a
-				css={css`
-					text-decoration: none;
-				`}
-			>
+			<a>
 				<IconFact
 					icon={icon}
 					text={text}

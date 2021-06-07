@@ -16,10 +16,7 @@ export default function BlogPage() {
 		<Fragment>
 			<Head>
 				<title>Oliver Dietsche | Blog</title>
-				<meta
-					name="description"
-					content="A blog by Oliver Dietsche."
-				/>
+				<meta name="description" content="A blog by Oliver Dietsche." />
 				<meta name="robots" content="noindex, nofollow" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				{/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
