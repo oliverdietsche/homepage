@@ -18,7 +18,7 @@ export default function BlogPage() {
 				<title>Oliver Dietsche | Blog</title>
 				<meta
 					name="description"
-					content="The digital portfolio of Oliver Dietsche, a passionate software developer. Find out more about him, his work and how to get in contact on this page."
+					content="A blog by Oliver Dietsche."
 				/>
 				<meta name="robots" content="noindex, nofollow" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
