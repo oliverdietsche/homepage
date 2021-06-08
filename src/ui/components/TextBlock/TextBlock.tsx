@@ -45,6 +45,8 @@ export function TextBlock({ title, heading, text, palette, ...props }: ITextBloc
 						font-size: 1rem;
 						font-weight: 400;
 						color: ${palette.text.secondary};
+						hyphens: auto;
+						text-align: justify;
 					`}
 					dangerouslySetInnerHTML={{ __html: replaceNewlinesWithBreakTags(text) }}
 				/>

@@ -52,6 +52,8 @@ export function Card({ title, description, githubHref, palette, icons, ...props 
 					color: ${palette.text.secondary};
 					font-weight: 300;
 					font-size: 1rem;
+					hyphens: auto;
+					text-align: justify;
 				`}
 			>
 				{description}
