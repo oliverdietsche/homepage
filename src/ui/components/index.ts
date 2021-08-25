@@ -5,6 +5,8 @@ export * from './IconButton';
 export * from './IconFact';
 export * from './IconLink';
 export * from './Navigation';
+export * from './PostList';
+export * from './PostView';
 export * from './Quote';
 export * from './Section';
 export * from './Stage';

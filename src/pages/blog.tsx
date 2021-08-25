@@ -1,28 +1,26 @@
+import { gql } from '@apollo/client';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import { Fragment } from 'react';
+import client from '../../apollo-client';
 import { PAGES_CONFIG } from '../config';
 import { useTheme } from '../theme';
-import { Navigation, Stage, TextBlock } from '../ui';
+import { HTMLHead, Navigation, Stage, TextBlock } from '../ui';
+import { IPostListProps, PostList } from '../ui/components/PostList';
 import { Section } from '../ui/components/Section';
 
-export default function BlogPage() {
-	const { secondaryPalette, mediaQueries } = useTheme();
+interface IBlogPageProps {
+	posts: IPostListProps['posts'];
+}
+
+export default function BlogPage({ posts }: IBlogPageProps) {
+	const { secondaryPalette, primaryPalette, mediaQueries } = useTheme();
 	const router = useRouter();
-	const { navItems } = PAGES_CONFIG;
+	const { name, hrefs, navItems } = PAGES_CONFIG;
 
 	return (
 		<Fragment>
-			<Head>
-				<title>Oliver Dietsche | Blog</title>
-				<meta name="description" content="A blog by Oliver Dietsche." />
-				<meta name="robots" content="noindex, nofollow" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				{/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-				{/* @ts-ignore: charset in lowercase */}
-				<meta charset="UTF-8" />
-			</Head>
+			<HTMLHead title="Oliver Dietsche | Blog" description="A blog by Oliver Dietsche." />
 			<Section palette={secondaryPalette}>
 				<Navigation
 					css={css`
@@ -34,12 +32,7 @@ export default function BlogPage() {
 					items={navItems}
 					currentHref={router.pathname}
 				/>
-				<Stage
-					name="Oliver Dietsche."
-					palette={secondaryPalette}
-					githubHref="https://github.com/oliverdietsche"
-					linkedInHref="https://www.linkedin.com/in/oliver-dietsche-b5b5a0190"
-				/>
+				<Stage name={name} palette={secondaryPalette} githubHref={hrefs.github} linkedInHref={hrefs.linkedIn} />
 				<TextBlock
 					palette={secondaryPalette}
 					title="– Introduction"
@@ -47,6 +40,30 @@ export default function BlogPage() {
 					text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 				/>
 			</Section>
+			<Section palette={primaryPalette}>
+				<PostList posts={posts} palette={secondaryPalette} />
+			</Section>
 		</Fragment>
 	);
+}
+
+export async function getStaticProps() {
+	const { data }: { data: { posts: Pick<IBlogPageProps, 'posts'> } } = await client.query({
+		query: gql`
+			query Posts {
+				posts {
+					slug
+					title
+					author {
+						name
+					}
+				}
+			}
+		`,
+	});
+	return {
+		props: {
+			posts: data.posts,
+		},
+	};
 }

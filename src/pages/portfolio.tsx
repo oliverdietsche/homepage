@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import { Fragment } from 'react';
 import { PAGES_CONFIG } from '../config';
 import { useTheme } from '../theme';
-import { Card, IconLink, Navigation, Stage, TextBlock } from '../ui';
+import { Card, HTMLHead, IconLink, Navigation, Stage, TextBlock } from '../ui';
 import { IconBadge } from '../ui/components/IconBadge';
 import { IconFact } from '../ui/components/IconFact';
 import { Quote } from '../ui/components/Quote';
@@ -13,21 +12,14 @@ import { Section } from '../ui/components/Section';
 export default function PortfolioPage() {
 	const { universalColors, primaryPalette, secondaryPalette, mediaQueries } = useTheme();
 	const router = useRouter();
-	const { navItems } = PAGES_CONFIG;
+	const { name, hrefs, navItems } = PAGES_CONFIG;
 
 	return (
 		<Fragment>
-			<Head>
-				<title>Oliver Dietsche | Portfolio</title>
-				<meta
-					name="description"
-					content="The digital portfolio of Oliver Dietsche, a passionate software developer. Find out more about him, his work and how to get in contact on this page."
-				/>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				{/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-				{/* @ts-ignore: charset in lowercase */}
-				<meta charset="UTF-8" />
-			</Head>
+			<HTMLHead
+				title="Oliver Dietsche | Portfolio"
+				description="The digital portfolio of Oliver Dietsche, a passionate software developer. Find out more about him, his work and how to get in contact on this page."
+			/>
 			<Section palette={primaryPalette}>
 				<Navigation
 					css={css`
@@ -39,12 +31,7 @@ export default function PortfolioPage() {
 					items={navItems}
 					currentHref={router.pathname}
 				/>
-				<Stage
-					name="Oliver Dietsche."
-					palette={primaryPalette}
-					githubHref="https://github.com/oliverdietsche"
-					linkedInHref="https://www.linkedin.com/in/oliver-dietsche-b5b5a0190"
-				/>
+				<Stage name={name} palette={secondaryPalette} githubHref={hrefs.github} linkedInHref={hrefs.linkedIn} />
 				<TextBlock
 					palette={primaryPalette}
 					title="– Introduction"
