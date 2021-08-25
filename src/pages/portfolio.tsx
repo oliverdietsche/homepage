@@ -23,10 +23,6 @@ export default function PortfolioPage() {
 					name="description"
 					content="The digital portfolio of Oliver Dietsche, a passionate software developer. Find out more about him, his work and how to get in contact on this page."
 				/>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				{/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-				{/* @ts-ignore: charset in lowercase */}
-				<meta charset="UTF-8" />
 			</Head>
 			<Section palette={primaryPalette}>
 				<Navigation
