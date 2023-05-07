@@ -12,7 +12,7 @@ export function Section({ palette, children }: ISectionProps) {
 	return (
 		<div
 			css={css`
-				width: 100vw;
+				width: 100%;
 				background: ${palette.background};
 			`}
 		>
