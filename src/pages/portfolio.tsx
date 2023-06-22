@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { Fragment } from 'react';
 import { PAGES_CONFIG } from '../config';
 import { useTheme } from '../theme';
-import { Card, IconLink, Navigation, Stage, TextBlock } from '../ui';
+import { Card, Navigation, Stage, TextBlock } from '../ui';
 import { IconBadge } from '../ui/components/IconBadge';
 import { IconFact } from '../ui/components/IconFact';
 import { Quote } from '../ui/components/Quote';
